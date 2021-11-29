@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/brenorodriguesdev/desafio-pedidopago-microservice-farmacia/issues"
   },
-  "homepage": "https://github.com/brenorodriguesdev/desafio-pedidopago-microservice-farmacia#readme"
+  "homepage": "https://github.com/brenorodriguesdev/desafio-pedidopago-microservice-farmacia#readme",
+  "dependencies": {
+    "typescript": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.10"
+  }
 }
