@@ -1,5 +1,5 @@
 import { FarmaciaModel } from "../models/farmacia";
 
-export interface ListarFarmaciaUseCase {
+export interface ListarFarmaciasUseCase {
     listar: () => Promise<FarmaciaModel[]>
 }
