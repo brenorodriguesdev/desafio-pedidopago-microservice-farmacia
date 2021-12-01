@@ -3,7 +3,7 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 't
 @Entity('farmacia')
 export class Farmacia {
   @PrimaryGeneratedColumn('increment')
-  id: number
+  id?: number
 
   @Column()
   logo: string
@@ -27,5 +27,5 @@ export class Farmacia {
   telefone: string
 
   @Column()
-  outros: string
+  outros?: string
 }

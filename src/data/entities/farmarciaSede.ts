@@ -5,7 +5,7 @@ import { FarmaciaFilial } from './farmaciaFilial'
 @Entity('farmaciaSede')
 export class FarmaciaSede {
   @PrimaryGeneratedColumn('increment')
-  id: number
+  id?: number
 
   @OneToOne(() => Farmacia)
   @JoinColumn({ name: 'idFarmacia' })
