@@ -1,5 +1,5 @@
-import { Farmacia } from "../entities/farmacia";
+import { FarmaciaSede } from "../entities/farmarciaSede";
 
 export interface FarmaciaSedeRepository {
-    create: (farmacia: Farmacia) => Promise<Farmacia>
+    create: (farmaciaSede: FarmaciaSede) => Promise<FarmaciaSede>
 }
