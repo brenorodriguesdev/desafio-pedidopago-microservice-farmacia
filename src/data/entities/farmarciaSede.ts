@@ -8,12 +8,12 @@ export class FarmaciaSede {
   id: number
 
   @OneToOne(() => Farmacia)
-  @JoinColumn({ name: 'idFarmaciaSede' })
-  sede: Farmacia
+  @JoinColumn({ name: 'idFarmacia' })
+  farmacia: Farmacia
 
   @OneToMany(() => FarmaciaFilial, farmaciaFilial => farmaciaFilial.farmaciaSede, {
     cascade: ['insert', 'update']
   })
-  @JoinColumn({ name: 'id_pessoa' })
+  @JoinColumn({ name: 'idFarmaciaSede' })
   filias: FarmaciaFilial[]
 }

@@ -12,7 +12,7 @@ export class FarmaciaFilial {
   farmacia: Farmacia
 
   @ManyToOne(() => FarmaciaSede, farmaciaSede => farmaciaSede.filias)
-  @JoinColumn({ name: 'idFarmaciaFilial' })
+  @JoinColumn({ name: 'idFarmaciaSede' })
   farmaciaSede: FarmaciaSede
 
 }
