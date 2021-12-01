@@ -9,8 +9,8 @@ export class FarmaciaRepositoryTypeORM implements FarmaciaRepository {
   }
 
   async findById (id: number): Promise<Farmacia> {
-    const bancoAgenciaRepository = getRepository(Farmacia)
-    return await bancoAgenciaRepository.findOne(id)
+    const farmaciaRepository = getRepository(Farmacia)
+    return await farmaciaRepository.findOne(id)
   }
 
   async create (farmacia: Farmacia): Promise<Farmacia> {
