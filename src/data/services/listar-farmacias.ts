@@ -1,8 +1,8 @@
 import { FarmaciaModel } from "../../domain/models/farmacia";
-import { ListarFarmaciaUseCase } from "../../domain/useCases/listar-farmacias";
+import { ListarFarmaciasUseCase } from "../../domain/useCases/listar-farmacias";
 import { FarmaciaRepository } from "../contracts/farmacia-repository";
 
-export class ListarFarmaciaService implements ListarFarmaciaUseCase {
+export class ListarFarmaciasService implements ListarFarmaciasUseCase {
     constructor (private readonly farmaciaRepository: FarmaciaRepository) {}
     async listar(): Promise<FarmaciaModel[]> {
         const farmacias = await this.farmaciaRepository.findAll()
