@@ -1,5 +1,5 @@
 export interface UpdateFarmaciaModel {
-    id: number
+    id?: number
     logo: string
     nome: string
     cnpj: string
