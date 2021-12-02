@@ -14,9 +14,9 @@ export class FarmaciaFilialRepositoryTypeORM implements FarmaciaFilialRepository
         return await farmaciaFilialRepository.save(farmaciaFilial)
     }
 
-    async deleteById (id: number): Promise<void> {
+    async deleteById(id: number): Promise<void> {
         const farmaciaFilialRepository = getRepository(FarmaciaFilial)
         await farmaciaFilialRepository.delete(id)
-      }
+    }
 
 }
