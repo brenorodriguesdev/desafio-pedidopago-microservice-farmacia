@@ -5,6 +5,7 @@ import { makeCriarFarmaciaController } from "../factories/controllers/criar-farm
 import { makeCriarFarmaciaFilialController } from "../factories/controllers/criar-farmaciaFilial"
 import { makeCriarFarmaciaSedeController } from "../factories/controllers/criar-farmaciaSede"
 import { makeDeletarFarmaciaController } from "../factories/controllers/deletar-farmacia"
+import { makeDeletarFarmaciaFilialController } from "../factories/controllers/deletar-farmaciaFilial"
 import { makeListarFarmaciasController } from "../factories/controllers/listar-farmacias"
 
 const grpc = require('grpc')
@@ -23,6 +24,7 @@ export default (server: any): void => {
         criarSede: adaptService(makeCriarFarmaciaSedeController()),
         deletar: adaptService(makeDeletarFarmaciaController()),
         buscar: adaptService(makeBuscarFarmaciaController()),
+        deletarFilial: adaptService(makeDeletarFarmaciaFilialController()),
         listar: adaptService(makeListarFarmaciasController()),
     })
 
