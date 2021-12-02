@@ -4,6 +4,11 @@ import { FarmaciaSede } from '../data/entities/farmarciaSede'
 
 export class FarmaciaSedeRepositoryTypeORM implements FarmaciaSedeRepository {
 
+    async findAll(): Promise<FarmaciaSede[]> {
+        const farmaciaSedeRepository = getRepository(FarmaciaSede)
+        return await farmaciaSedeRepository.find({ relations: ['farmacia', 'filias', 'filias.farmacia'] })
+    }
+
     async findById(id: number): Promise<FarmaciaSede> {
         const farmaciaSedeRepository = getRepository(FarmaciaSede)
         return await farmaciaSedeRepository.findOne(id, { relations: ['farmacia', 'filias', 'filias.farmacia'] })
