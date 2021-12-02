@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+service FarmaciaService {
+    rpc atualizar (AtualizarFarmaciaModel) returns (Void) {}
+    rpc buscar (IdModel) returns (ProdutoModel) {}
+    rpc criar (CriarFarmaciaModel) returns (FarmaciaModel) {}
+    rpc criarFilial (CriarFarmaciaFilialModel) returns (void) {}
+    rpc criarSede (CriarFarmaciaSedeModel) returns (Void) {}
+    rpc deletar (IdModel) returns (Void) {}
+    rpc listar (Void) returns (ProdutosModel) {}
+}
+
+message Void {
+
+}
+
+message IdModel {
+    int32 id = 1;
+}
+
+message IngredienteModel {
+    int32 id = 1;
+    string nome = 2;
+}
+
+message AtualizarFarmaciaModel {
+    int32 id = 1;
+    string logo = 2;
+    string nome = 3;
+    string cnpj = 4;
+    string endereco = 5;
+    string horarioFuncionamento = 6;
+    string responsavel = 7;
+    string telefone = 8;
+    string outros = 9;
+}
+
+
+message CriarFarmaciaModel {
+    string logo = 1;
+    string nome = 2;
+    string cnpj = 3;
+    string endereco = 4;
+    string horarioFuncionamento = 5;
+    string responsavel = 6;
+    string telefone = 7;
+    string outros = 8;
+}
+
+message FarmaciaModel {
+    int32 id = 1;
+    string logo = 2;
+    string nome = 3;
+    string cnpj = 4;
+    string endereco = 5;
+    string horarioFuncionamento = 6;
+    string responsavel = 7;
+    string telefone = 8;
+    string outros = 9;
+}
+
+message CriarFarmaciaSedeModel {
+    FarmaciaModel farmacia = 1;
+}
+
+message CriarFarmaciaFilialModel {
+    FarmaciaModel farmacia = 1;
+    int32 idFarmaciaSede = 2;
+}
+
+message ProdutosModel {
+  repeated ProdutoModel produtos = 1;
+}
