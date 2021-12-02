@@ -1,10 +1,10 @@
-import { DeletarFarmaciaUseCase } from "../../domain/useCases/deletar-farmacia"
+import { DeletarFarmaciaFilialUseCase } from "../../domain/useCases/deletar-farmaciaFilial"
 import { Validator } from "../../validation/contracts/validator"
 import { Controller } from "../contracts/controller"
 import { GRPCRequest } from "../contracts/grpc"
 
-export class DeletarFarmaciaController implements Controller {
-    constructor(private readonly validator: Validator, private readonly deletarFarmaciaUseCase: DeletarFarmaciaUseCase) { }
+export class DeletarFarmaciaFilialController implements Controller {
+    constructor(private readonly validator: Validator, private readonly deletarFarmaciaFilialUseCase: DeletarFarmaciaFilialUseCase) { }
     async handle(grpcRequest: GRPCRequest): Promise<any> {
         const error = this.validator.validate(grpcRequest.request)
 
@@ -16,7 +16,7 @@ export class DeletarFarmaciaController implements Controller {
             id,
         } = grpcRequest.request
 
-        const result = await this.deletarFarmaciaUseCase.deletar(id)
+        const result = await this.deletarFarmaciaFilialUseCase.deletar(id)
 
         if (result instanceof Error) {
             throw result
