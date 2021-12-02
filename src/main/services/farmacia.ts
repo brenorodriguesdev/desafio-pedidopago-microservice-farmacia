@@ -7,6 +7,7 @@ import { makeCriarFarmaciaSedeController } from "../factories/controllers/criar-
 import { makeDeletarFarmaciaController } from "../factories/controllers/deletar-farmacia"
 import { makeDeletarFarmaciaFilialController } from "../factories/controllers/deletar-farmaciaFilial"
 import { makeListarFarmaciasController } from "../factories/controllers/listar-farmacias"
+import { makeListarFarmaciasSedesController } from "../factories/controllers/listar-farmacias-sedes"
 
 const grpc = require('grpc')
 const protoLoader = require('@grpc/proto-loader')
@@ -26,6 +27,7 @@ export default (server: any): void => {
         buscar: adaptService(makeBuscarFarmaciaController()),
         deletarFilial: adaptService(makeDeletarFarmaciaFilialController()),
         listar: adaptService(makeListarFarmaciasController()),
+        listarSedes: adaptService(makeListarFarmaciasSedesController()),
     })
 
 }
