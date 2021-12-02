@@ -16,7 +16,7 @@ export default (server: any): void => {
     const produtoProto = grpc.loadPackageDefinition(protoObject)
     server.started = false
     
-    server.addService(produtoProto.ProdutoService.service, {
+    server.addService(produtoProto.FarmaciaService.service, {
         atualizar: adaptService(makeAtualizarFarmaciaController()),
         criar: adaptService(makeCriarFarmaciaController()),
         criarFilial: adaptService(makeCriarFarmaciaFilialController()),
