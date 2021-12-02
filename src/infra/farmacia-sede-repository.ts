@@ -6,7 +6,7 @@ export class FarmaciaSedeRepositoryTypeORM implements FarmaciaSedeRepository {
 
     async findById(id: number): Promise<FarmaciaSede> {
         const farmaciaSedeRepository = getRepository(FarmaciaSede)
-        return await farmaciaSedeRepository.findOne(id, { relations: ['farmacia', 'filias'] })
+        return await farmaciaSedeRepository.findOne(id, { relations: ['farmacia', 'filias', 'filias.farmacia'] })
     }
 
     async create(farmaciaSede: FarmaciaSede): Promise<FarmaciaSede> {

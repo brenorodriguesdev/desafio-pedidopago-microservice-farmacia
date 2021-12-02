@@ -19,11 +19,15 @@ export class CriarFarmaciaFilialService implements CriarFarmaciaFilialUseCase {
                 return new Error('Essa farmacia sede não foi encontrada!')
             }
 
+            if (farmaciaSede.id == data.farmacia.id) {
+                return new Error('Uma farmacia sede não pode ser filial dela mesmo!')
+            }
+
             if (farmaciaSede.filias.some(filial => filial.farmacia.id == data.farmacia.id)) {
                 return new Error('Essa farmacia já é filial dessa sede!')
             }
 
-            if (farmaciaSede.filias,length >= 3) {
+            if (farmaciaSede.filias.length >= 3) {
                 return new Error('Só é possível adicionar 3 farmacias filias a uma farmacia sede!')
             }
 
