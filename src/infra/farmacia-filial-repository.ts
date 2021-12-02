@@ -11,6 +11,7 @@ export class FarmaciaFilialRepositoryTypeORM implements FarmaciaFilialRepository
 
     async create(farmaciaFilial: FarmaciaFilial): Promise<FarmaciaFilial> {
         const farmaciaFilialRepository = getRepository(FarmaciaFilial)
+        farmaciaFilial.id = await farmaciaFilialRepository.count() + 1
         return await farmaciaFilialRepository.save(farmaciaFilial)
     }
 

@@ -4,7 +4,7 @@ import { FarmaciaRepository } from "../contracts/farmacia-repository";
 
 export class CriarFarmaciaService implements CriarFarmaciaUseCase {
     constructor(private readonly farmaciaRepository: FarmaciaRepository) { }
-    async criar(data: FarmaciaModel): Promise<void | Error> {
-        await this.farmaciaRepository.create(data)
+    async criar(data: FarmaciaModel): Promise<FarmaciaModel | Error> {
+        return await this.farmaciaRepository.create(data)
     }
 }
