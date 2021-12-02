@@ -7,7 +7,7 @@ service FarmaciaService {
     rpc criarFilial (CriarFarmaciaFilialModel) returns (void) {}
     rpc criarSede (CriarFarmaciaSedeModel) returns (Void) {}
     rpc deletar (IdModel) returns (Void) {}
-    rpc listar (Void) returns (ProdutosModel) {}
+    rpc listar (Void) returns (FarmaciasModel) {}
 }
 
 message Void {
@@ -68,6 +68,6 @@ message CriarFarmaciaFilialModel {
     int32 idFarmaciaSede = 2;
 }
 
-message ProdutosModel {
-  repeated ProdutoModel produtos = 1;
+message FarmaciasModel {
+  repeated FarmaciaModel farmacias = 1;
 }
