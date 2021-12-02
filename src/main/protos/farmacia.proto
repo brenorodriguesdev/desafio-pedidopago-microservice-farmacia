@@ -4,7 +4,7 @@ service FarmaciaService {
     rpc atualizar (AtualizarFarmaciaModel) returns (Void) {}
     rpc buscar (IdModel) returns (FarmaciaModel) {}
     rpc criar (CriarFarmaciaModel) returns (FarmaciaModel) {}
-    rpc criarFilial (CriarFarmaciaFilialModel) returns (void) {}
+    rpc criarFilial (CriarFarmaciaFilialModel) returns (Void) {}
     rpc criarSede (CriarFarmaciaSedeModel) returns (Void) {}
     rpc deletar (IdModel) returns (Void) {}
     rpc listar (Void) returns (FarmaciasModel) {}
