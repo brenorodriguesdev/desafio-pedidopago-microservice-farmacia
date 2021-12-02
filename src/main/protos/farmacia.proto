@@ -2,7 +2,7 @@ syntax = "proto3";
 
 service FarmaciaService {
     rpc atualizar (AtualizarFarmaciaModel) returns (Void) {}
-    rpc buscar (IdModel) returns (ProdutoModel) {}
+    rpc buscar (IdModel) returns (FarmaciaModel) {}
     rpc criar (CriarFarmaciaModel) returns (FarmaciaModel) {}
     rpc criarFilial (CriarFarmaciaFilialModel) returns (void) {}
     rpc criarSede (CriarFarmaciaSedeModel) returns (Void) {}
