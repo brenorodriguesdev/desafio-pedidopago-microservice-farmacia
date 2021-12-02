@@ -9,6 +9,7 @@ service FarmaciaService {
     rpc deletar (IdModel) returns (Void) {}
     rpc deletarFilial (IdModel) returns (Void) {}
     rpc listar (Void) returns (FarmaciasModel) {}
+    rpc listarSedes (Void) returns (FarmaciasSedesModel) {}
 }
 
 message Void {
@@ -71,4 +72,14 @@ message CriarFarmaciaFilialModel {
 
 message FarmaciasModel {
   repeated FarmaciaModel farmacias = 1;
+}
+
+message FarmaciaSedeModel {
+    int32 id = 1;
+    FarmaciaModel farmacia = 2;
+    repeated FarmaciaModel filias = 1;
+}
+
+message FarmaciasSedesModel {
+  repeated FarmaciaSedeModel farmaciasSedes = 1;
 }
