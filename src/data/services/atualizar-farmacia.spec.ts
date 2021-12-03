@@ -39,14 +39,14 @@ describe('AtualizarFarmacia Service', () => {
         expect(findByIdSpy).toHaveBeenCalledWith(1)
     })
 
-    test('Garantir que se o produtoRepository findById retornar uma exceção o serviço repassará a exceção', async () => {
+    test('Garantir que se o farmaciaRepository findById retornar uma exceção o serviço repassará a exceção', async () => {
         const { sut, farmaciaRepository } = makeSut()
         jest.spyOn(farmaciaRepository, 'findById').mockImplementationOnce(() => { throw new Error() })
         const promise = sut.atualizar(makeData())
         await expect(promise).rejects.toThrow()
     })
 
-    test('Garantir que se o produtoRepository findById retornar nullo retornar um error', async () => {
+    test('Garantir que se o farmaciaRepository findById retornar nullo retornar um error', async () => {
         const { sut, farmaciaRepository } = makeSut()
         jest.spyOn(farmaciaRepository, 'findById').mockReturnValueOnce(null)
         const error = await sut.atualizar(makeData())
