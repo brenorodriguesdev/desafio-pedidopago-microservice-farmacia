@@ -43,8 +43,8 @@ export class CriarFarmaciaFilialService implements CriarFarmaciaFilialUseCase {
                 return new Error('Essa farmacia sede não foi encontrada!')
             }
 
-            if (farmaciaSede.filias,length >= 3) {
-                return new Error('Só é possível adicionar 3 farmacias filias a uma farmacia sede')
+            if (farmaciaSede.filias.length >= 3) {
+                return new Error('Só é possível adicionar 3 farmacias filias a uma farmacia sede!')
             }
 
             await this.farmaciaFilialRepository.create({

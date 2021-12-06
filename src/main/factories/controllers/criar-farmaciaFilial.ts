@@ -1,4 +1,4 @@
-import { CriarFarmaciaFilialService } from "../../../data/services/criar-FarmaciaFilial"
+import { CriarFarmaciaFilialService } from "../../../data/services/criar-farmaciaFilial"
 import { FarmaciaFilialRepositoryTypeORM } from "../../../infra/farmacia-filial-repository"
 import { FarmaciaRepositoryTypeORM } from "../../../infra/farmacia-repository"
 import { FarmaciaSedeRepositoryTypeORM } from "../../../infra/farmacia-sede-repository"
